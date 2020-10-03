@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 38164404}
   - component: {fileID: 38164407}
   - component: {fileID: 38164405}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 49314432}
   - component: {fileID: 49314435}
   - component: {fileID: 49314433}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 247765768}
   - component: {fileID: 247765771}
   - component: {fileID: 247765769}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 289994574}
   - component: {fileID: 289994577}
   - component: {fileID: 289994575}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 317299343}
   - component: {fileID: 317299346}
   - component: {fileID: 317299344}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -612,7 +612,7 @@ GameObject:
   - component: {fileID: 354059517}
   - component: {fileID: 354059520}
   - component: {fileID: 354059518}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -726,7 +726,7 @@ GameObject:
   - component: {fileID: 501866146}
   - component: {fileID: 501866149}
   - component: {fileID: 501866147}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -797,7 +797,7 @@ GameObject:
   - component: {fileID: 511849931}
   - component: {fileID: 511849934}
   - component: {fileID: 511849932}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -868,7 +868,7 @@ GameObject:
   - component: {fileID: 525970804}
   - component: {fileID: 525970807}
   - component: {fileID: 525970805}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1170,7 +1170,7 @@ GameObject:
   - component: {fileID: 718128702}
   - component: {fileID: 718128705}
   - component: {fileID: 718128703}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1241,7 +1241,7 @@ GameObject:
   - component: {fileID: 719083614}
   - component: {fileID: 719083617}
   - component: {fileID: 719083615}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1323,7 +1323,7 @@ GameObject:
   - component: {fileID: 1023560762}
   - component: {fileID: 1023560765}
   - component: {fileID: 1023560763}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1394,7 +1394,7 @@ GameObject:
   - component: {fileID: 1125310642}
   - component: {fileID: 1125310645}
   - component: {fileID: 1125310643}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1465,7 +1465,7 @@ GameObject:
   - component: {fileID: 1134477384}
   - component: {fileID: 1134477387}
   - component: {fileID: 1134477385}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1536,7 +1536,7 @@ GameObject:
   - component: {fileID: 1221091814}
   - component: {fileID: 1221091817}
   - component: {fileID: 1221091815}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1785,7 +1785,7 @@ GameObject:
   - component: {fileID: 1347082913}
   - component: {fileID: 1347082916}
   - component: {fileID: 1347082914}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1939,7 +1939,7 @@ GameObject:
   - component: {fileID: 1353955130}
   - component: {fileID: 1353955133}
   - component: {fileID: 1353955131}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2010,7 +2010,7 @@ GameObject:
   - component: {fileID: 1358616318}
   - component: {fileID: 1358616321}
   - component: {fileID: 1358616319}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2081,7 +2081,7 @@ GameObject:
   - component: {fileID: 1358999472}
   - component: {fileID: 1358999475}
   - component: {fileID: 1358999473}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2152,7 +2152,7 @@ GameObject:
   - component: {fileID: 1375773038}
   - component: {fileID: 1375773041}
   - component: {fileID: 1375773039}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2223,7 +2223,7 @@ GameObject:
   - component: {fileID: 1387788959}
   - component: {fileID: 1387788962}
   - component: {fileID: 1387788960}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2299,7 +2299,7 @@ GameObject:
   - component: {fileID: 1549420636}
   - component: {fileID: 1549420639}
   - component: {fileID: 1549420637}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2370,7 +2370,7 @@ GameObject:
   - component: {fileID: 1627607325}
   - component: {fileID: 1627607328}
   - component: {fileID: 1627607326}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2441,7 +2441,7 @@ GameObject:
   - component: {fileID: 1749443983}
   - component: {fileID: 1749443986}
   - component: {fileID: 1749443984}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2591,7 +2591,7 @@ GameObject:
   - component: {fileID: 1854361442}
   - component: {fileID: 1854361445}
   - component: {fileID: 1854361443}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2669,6 +2669,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 274750744424368144, guid: 4c9c9c317cd73ce419091310a9acd5f8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 274750744424368145, guid: 4c9c9c317cd73ce419091310a9acd5f8, type: 3}
       propertyPath: _circleCentre
       value: 
@@ -2741,6 +2745,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrainCar
       objectReference: {fileID: 0}
+    - target: {fileID: 274750744451712246, guid: 4c9c9c317cd73ce419091310a9acd5f8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 274750744620860136, guid: 4c9c9c317cd73ce419091310a9acd5f8, type: 3}
       propertyPath: _camera
       value: 
@@ -2758,7 +2766,7 @@ GameObject:
   - component: {fileID: 1999826548}
   - component: {fileID: 1999826551}
   - component: {fileID: 1999826549}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrackPiece (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

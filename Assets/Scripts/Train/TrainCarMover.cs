@@ -45,9 +45,7 @@ public class TrainCarMover : MonoBehaviour
     private void FixedUpdate()
     {
         var foundCollider = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), _collisionRadius);
-
         if (!foundCollider) return;
-
         var trackHealth = foundCollider.GetComponent<TrackHealth>();
         if (!trackHealth) return;
         if (trackHealth.TrackHealth1 <= 0 && !_isJumping) Debug.Log("You fuckin suck message play");

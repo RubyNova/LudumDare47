@@ -4,6 +4,6 @@ namespace Interface
 {
     public interface IInteract
     {
-        void Interact();
+        void Interact(int num);
     }
 }

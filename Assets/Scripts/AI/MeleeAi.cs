@@ -1,16 +1,17 @@
-﻿using Train;
+﻿using Interface;
+using Train;
 using UnityEngine;
 
 namespace AI
 {
-    public class MeleeAi : AiMaster
+    public class MeleeAi : AiMaster, IInteract
     {
         [SerializeField] private float _colRadius;
+        [SerializeField] private int _health;
         private void FixedUpdate()
         {
             if (_trackHealth) return;
-            var foundCollider = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), _colRadius);
-
+            var foundCollider = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), _colRadius, -8);
             if (!foundCollider) return;
             var trackHealth = foundCollider.GetComponent<TrackHealth>();
             if (!trackHealth) return;
@@ -36,6 +37,12 @@ namespace AI
             if (!(_attackTimer > _attackSpeed)) return;
             _trackHealth.TrackHealth1 -= _attackDamage;
             _attackTimer = 0;
+        }
+
+        public void Interact(int num)
+        {
+            _health -= num;
+            if (_health <= 0) Destroy(gameObject);
         }
     }
 }
