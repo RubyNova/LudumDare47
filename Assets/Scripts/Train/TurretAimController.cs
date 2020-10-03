@@ -9,6 +9,7 @@ namespace Train
         [SerializeField] private Transform _muzzle;
         [SerializeField] private GameObject _bulletPrefab;
         [SerializeField] private float _bulletCooldown;
+        [SerializeField] private AudioSource _shootingSound;
 
         private float _timeToNextBullet = 0f;
     
@@ -31,7 +32,8 @@ namespace Train
 
             if (Input.GetKeyDown(KeyCode.Mouse0) && _timeToNextBullet <= 0f)
             {
-                var go = Instantiate(_bulletPrefab, _muzzle.position, _muzzle.rotation); //THIS WORKS :tm:
+                _shootingSound.Play();
+                Instantiate(_bulletPrefab, _muzzle.position, _muzzle.rotation); //THIS WORKS :tm:
                 _timeToNextBullet = _bulletCooldown;
             }
 
