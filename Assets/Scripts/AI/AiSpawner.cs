@@ -8,18 +8,38 @@ namespace AI
 {
     public class AiSpawner : MonoBehaviour
     {
+        [SerializeField] private float __spawnRate;
+        [SerializeField] private float _timerReduction;
+        [SerializeField] private float _elapsedTimeToReduce;
         [SerializeField] private GameObject[] _aiPrefab;
         [SerializeField] private int[] _spawnWeight;
         [SerializeField] private Transform _centre;
         [SerializeField] private float _radius;
         [SerializeField] private TrainCarMover _trainCarMover;
         [SerializeField] private HighScore _scoreboard;
+        private float _spawnTimer;
+        private float _timeElapsed;
+        private float _previousTime = 0f;
 
         public List<GameObject> _aiSpawned = new List<GameObject>();
 
         private void OnValidate()
         {
             if (_aiPrefab.Length != _spawnWeight.Length) _spawnWeight = new int[_aiPrefab.Length];
+        }
+
+        private void Update()
+        {
+            _spawnTimer += Time.deltaTime;
+            if (!(_spawnTimer > __spawnRate)) return;
+            SpawnAi();
+            _timeElapsed += _spawnTimer;
+            if (_timeElapsed - _previousTime > _elapsedTimeToReduce)
+            {
+                _previousTime = _timeElapsed;
+                __spawnRate -= _timerReduction;
+            }
+            _spawnTimer = 0f;
         }
 
         public void SpawnAi()
