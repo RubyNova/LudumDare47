@@ -11,6 +11,7 @@ public class TrainCarMover : MonoBehaviour
     [SerializeField] private float _movementSpeed = 50f;
     [SerializeField] private AudioSource _cartRailsSource;
     [SerializeField] private AudioSource _cartJumpSource;
+    [SerializeField] private AudioSource _crashSource;
     [SerializeField] private float _enlargementMultiplier;
     [SerializeField] private float _enlargementStep;
 
@@ -43,7 +44,12 @@ public class TrainCarMover : MonoBehaviour
         if (!foundCollider) return;
         var trackHealth = foundCollider.GetComponent<TrackHealth>();
         if (!trackHealth) return;
-        if (trackHealth.TrackHealth1 <= 0 && !_isJumping) Debug.Log("You fuckin suck message play");
+        if (trackHealth.TrackHealth1 <= 0 && !_isJumping) 
+        {
+            Debug.Log("You fuckin suck message play"); //TOPKEK
+            _cartRailsSource.Stop();
+            _crashSource.Play();
+        }
     }
 
     private IEnumerator HandleJumpAnim()
