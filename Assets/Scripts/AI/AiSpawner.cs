@@ -33,6 +33,5 @@ namespace AI
             var goComp = go.GetComponent<AiMaster>();
             goComp.Distance = _trainCarMover.TravelRadius;
         }
-        
     }
 }

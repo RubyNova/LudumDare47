@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Linq;
+using Interface;
 
 namespace Train
 {
@@ -10,14 +11,17 @@ namespace Train
         [SerializeField] private string _tagNameForEnemies;
         [SerializeField] private float _moveSpeed;
         [SerializeField] private Renderer _spriteRenderer;
+        [SerializeField] private int _damage;
         
         // Update is called once per frame
         private void FixedUpdate()
         {
             var foundCollider = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), _radius);
 
-            if (foundCollider == null || !foundCollider.CompareTag(_tagNameForEnemies)) return;
+            if (foundCollider == null) return;
 
+            var interactable = foundCollider.GetComponent<IInteract>();
+            interactable?.Interact(_damage);
             Destroy(gameObject); //TODO: Add some kind of logic to damage the enemy. I assume Ian can handle that.
         }
 

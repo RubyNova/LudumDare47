@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Train;
 using UnityEngine;
 
 public class TrainCarMover : MonoBehaviour
@@ -33,6 +34,15 @@ public class TrainCarMover : MonoBehaviour
             _isJumping = true;
             StartCoroutine(HandleJumpAnim());
         }
+    }
+    
+    private void FixedUpdate()
+    {
+        var foundCollider = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), _collisionRadius);
+        if (!foundCollider) return;
+        var trackHealth = foundCollider.GetComponent<TrackHealth>();
+        if (!trackHealth) return;
+        if (trackHealth.TrackHealth1 <= 0 && !_isJumping) Debug.Log("You fuckin suck message play");
     }
 
     private IEnumerator HandleJumpAnim()
@@ -75,4 +85,6 @@ public class TrainCarMover : MonoBehaviour
 
         _isJumping = false;
     }
+    
+    
 }
