@@ -27,6 +27,8 @@ namespace Train
             float angle = (Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg) - 90;
             transform.rotation = Quaternion.Euler(0, 0, angle);
 
+            Debug.DrawRay(_muzzle.transform.position, _muzzle.transform.up, new Color(1, 1, 1, 1));
+
             if (Input.GetKeyDown(KeyCode.Mouse0) && _timeToNextBullet <= 0f)
             {
                 var go = Instantiate(_bulletPrefab, _muzzle.position, _muzzle.rotation); //THIS WORKS :tm:
