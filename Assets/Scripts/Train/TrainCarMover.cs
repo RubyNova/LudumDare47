@@ -18,6 +18,8 @@ public class TrainCarMover : MonoBehaviour
 
     private bool _isJumping;
 
+    public float TravelRadius => _travelRadius;
+
     private void Start() 
     {
         _isJumping = false;
