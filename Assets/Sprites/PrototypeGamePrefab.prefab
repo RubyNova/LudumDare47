@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1030549692864836379, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
       propertyPath: m_Volume
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4636144183092288772, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
       propertyPath: _camera
@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 5832471691809997853}
     - target: {fileID: 6525117339170305320, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
       propertyPath: m_Volume
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8594437722304289816, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
       propertyPath: m_Name
