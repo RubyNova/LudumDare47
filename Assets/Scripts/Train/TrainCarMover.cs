@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Train;
 using UnityEngine;
+using System;
 
 namespace Train
 {
@@ -22,6 +23,8 @@ namespace Train
         private bool _isJumping;
         private bool _hasPlayedCrash;
         public float TravelRadius => _travelRadius;
+
+        public event Action TrainCarCrashed;
 
         private void Start()
         {
@@ -58,6 +61,7 @@ namespace Train
                 _aimController.enabled = false;
                 _cartRotator.enabled = false;
                 this.enabled = false;
+                TrainCarCrashed?.Invoke();
             }
         }
 
