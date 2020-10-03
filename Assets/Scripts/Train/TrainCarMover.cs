@@ -3,95 +3,93 @@ using System.Collections.Generic;
 using Train;
 using UnityEngine;
 
-public class TrainCarMover : MonoBehaviour
+namespace Train
 {
-    [Header("Dependencies")]
-    [SerializeField] private Transform _circleCentre;
-    [SerializeField] private float _travelRadius = 1f;
-    [SerializeField] private float _movementSpeed = 50f;
-    [SerializeField] private AudioSource _cartRailsSource;
-    [SerializeField] private AudioSource _cartJumpSource;
-    [SerializeField] private AudioSource _crashSource;
-    [SerializeField] private float _enlargementMultiplier;
-    [SerializeField] private float _enlargementStep;
-
-    private bool _isJumping;
-    [SerializeField] private float _collisionRadius;
-
-    public float TravelRadius => _travelRadius;
-
-    private void Start() 
+    public class TrainCarMover : MonoBehaviour
     {
-        _isJumping = false;
-    }
+        [Header("Dependencies")]
+        [SerializeField] private Transform _circleCentre;
+        [SerializeField] private float _travelRadius = 1f;
+        [SerializeField] private float _movementSpeed = 50f;
+        [SerializeField] private AudioSource _cartRailsSource;
+        [SerializeField] private AudioSource _cartJumpSource;
+        [SerializeField] private AudioSource _crashSource;
+        [SerializeField] private float _enlargementMultiplier;
+        [SerializeField] private float _enlargementStep;
+        [SerializeField] private float _collisionRadius;
+        [SerializeField] private TurretAimController _aimController;
+        [SerializeField] private CartRotator _cartRotator;
+        private bool _isJumping;
+        private bool _hasPlayedCrash;
+        public float TravelRadius => _travelRadius;
 
-    // Update is called once per frame
-    private void Update()
-    {
-        float angle = ((Time.time * _movementSpeed) % 360.0f) * Mathf.Deg2Rad;
-        transform.position = _circleCentre.position + (new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0f) * _travelRadius);
-
-        if (Input.GetKeyDown(KeyCode.Space) && !_isJumping)
+        private void Start()
         {
-            _isJumping = true;
-            StartCoroutine(HandleJumpAnim());
-        }
-    }
-    
-    private void FixedUpdate()
-    {
-        var foundCollider = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), _collisionRadius);
-        if (!foundCollider) return;
-        var trackHealth = foundCollider.GetComponent<TrackHealth>();
-        if (!trackHealth) return;
-        if (trackHealth.TrackHealth1 <= 0 && !_isJumping) 
-        {
-            Debug.Log("You fuckin suck message play"); //TOPKEK
-            _cartRailsSource.Stop();
-            _crashSource.Play();
-        }
-    }
-
-    private IEnumerator HandleJumpAnim()
-    {
-        _cartRailsSource.Pause();
-        var originalScale = transform.localScale;
-        var targetScale = originalScale * _enlargementMultiplier;
-
-
-        while (transform.localScale.magnitude < targetScale.magnitude)
-        {
-            transform.localScale += (originalScale * Time.deltaTime * _enlargementStep);
-            yield return null;
+            _isJumping = false;
+            _hasPlayedCrash = false;
         }
 
-        transform.localScale = targetScale;
-
-        while (transform.localScale.x > originalScale.x && transform.localScale.y > originalScale.y && transform.localScale.z > originalScale.z)
+        // Update is called once per frame
+        private void Update()
         {
-            transform.localScale -= (originalScale * Time.deltaTime * _enlargementStep);
-            yield return null;
+            float angle = ((Time.time * _movementSpeed) % 360.0f) * Mathf.Deg2Rad;
+            transform.position = _circleCentre.position + (new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0f) * _travelRadius);
+
+            if (Input.GetKeyDown(KeyCode.Space) && !_isJumping)
+            {
+                _isJumping = true;
+                StartCoroutine(HandleJumpAnim());
+            }
         }
 
-        transform.localScale = originalScale;
+        private void FixedUpdate()
+        {
+            var foundCollider = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), _collisionRadius);
+            if (!foundCollider) return;
+            var trackHealth = foundCollider.GetComponent<TrackHealth>();
+            if (!trackHealth) return;
+            Debug.Log("Found track!");
+            if (trackHealth.TrackHealth1 <= 0 && !_isJumping && !_hasPlayedCrash)
+            {
+                Debug.Log("You fuckin suck message play"); //TOPKEK
+                _cartRailsSource.Stop();
+                _crashSource.Play();
+                _hasPlayedCrash = true;
+                _aimController.enabled = false;
+                _cartRotator.enabled = false;
+                this.enabled = false;
+            }
+        }
 
-        //for (int i = 0; i < _enlargementIterations; i++)
-        //{
-        //    transform.localScale += (originalScale * Time.deltaTime * _enlargementStep);
-        //    yield return null;
-        //}
+        private IEnumerator HandleJumpAnim()
+        {
+            _cartRailsSource.Pause();
+            var originalScale = transform.localScale;
+            var targetScale = originalScale * _enlargementMultiplier;
 
-        //for (int i = 0; i < _enlargementIterations; i++)
-        //{
-        //    transform.localScale -= (originalScale * Time.deltaTime * _enlargementStep);
-        //    yield return null;
-        //}
 
-        _cartJumpSource.Play();
-        _cartRailsSource.UnPause();
+            while (transform.localScale.magnitude < targetScale.magnitude)
+            {
+                transform.localScale += (originalScale * Time.deltaTime * _enlargementStep);
+                yield return null;
+            }
 
-        _isJumping = false;
+            transform.localScale = targetScale;
+
+            while (transform.localScale.x > originalScale.x && transform.localScale.y > originalScale.y && transform.localScale.z > originalScale.z)
+            {
+                transform.localScale -= (originalScale * Time.deltaTime * _enlargementStep);
+                yield return null;
+            }
+
+            transform.localScale = originalScale;
+
+            _cartJumpSource.Play();
+            _cartRailsSource.UnPause();
+
+            _isJumping = false;
+        }
+
+
     }
-    
-    
 }
