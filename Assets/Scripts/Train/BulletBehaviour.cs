@@ -16,12 +16,13 @@ namespace Train
         // Update is called once per frame
         private void FixedUpdate()
         {
-            var foundCollider = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), _radius);
+            var foundCollider = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), _radius, -9);
 
             if (foundCollider == null) return;
 
             var interactable = foundCollider.GetComponent<IInteract>();
-            interactable?.Interact(_damage);
+            if (interactable == null) return;
+            interactable.Interact(_damage);
             Destroy(gameObject); //TODO: Add some kind of logic to damage the enemy. I assume Ian can handle that.
         }
 

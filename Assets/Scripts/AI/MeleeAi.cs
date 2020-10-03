@@ -7,7 +7,8 @@ namespace AI
     public class MeleeAi : AiMaster, IInteract
     {
         [SerializeField] private float _colRadius;
-        [SerializeField] private int _health;
+        
+        
         private void FixedUpdate()
         {
             if (_trackHealth) return;
@@ -42,7 +43,8 @@ namespace AI
         public void Interact(int num)
         {
             _health -= num;
-            if (_health <= 0) Destroy(gameObject);
+            if (_health > 0) return;
+            _parentSpawn.RemoveAi(_pointValue, gameObject);
         }
     }
 }

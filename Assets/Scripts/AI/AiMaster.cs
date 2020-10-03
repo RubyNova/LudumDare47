@@ -9,9 +9,13 @@ namespace AI
         [SerializeField] protected float _movementSpeed;
         [SerializeField] protected float _attackSpeed;
         [SerializeField] protected float _attackDamage;
+        [SerializeField] protected int _health;
+        [SerializeField] protected int _pointValue;
         protected float _attackTimer = 0;
         protected AiState _currentState = AiState.Spawned;
         protected TrackHealth _trackHealth;
+        
+        public AiSpawner _parentSpawn { get; set; }
         
         public float Distance { get; set; }
 

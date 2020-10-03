@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using Scoring;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,6 +13,9 @@ namespace AI
         [SerializeField] private Transform _centre;
         [SerializeField] private float _radius;
         [SerializeField] private TrainCarMover _trainCarMover;
+        [SerializeField] private HighScore _scoreboard;
+
+        public List<GameObject> _aiSpawned = new List<GameObject>();
 
         private void OnValidate()
         {
@@ -31,7 +36,15 @@ namespace AI
             var spawnPos = _centre.position + (new Vector3(Mathf.Cos(direction), Mathf.Sin(direction), 0f) * _radius);
             var go = Instantiate(aiToSpawn, spawnPos, Quaternion.identity);
             var goComp = go.GetComponent<AiMaster>();
+            goComp._parentSpawn = this;
             goComp.Distance = _trainCarMover.TravelRadius;
+        }
+
+        public void RemoveAi(int num, GameObject go)
+        {
+            _scoreboard.CurrentScore += num;
+            _aiSpawned.Remove(go);
+            Destroy(go);
         }
     }
 }

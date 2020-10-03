@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Scoring;
 using Train;
 using UnityEngine;
 
@@ -13,6 +14,9 @@ public class TrainCarMover : MonoBehaviour
     [SerializeField] private AudioSource _cartJumpSource;
     [SerializeField] private float _enlargementMultiplier;
     [SerializeField] private float _enlargementStep;
+    [SerializeField] private float _pointTime;
+    [SerializeField] private HighScore _scoring;
+    private float _pointTimer;
 
     private bool _isJumping;
     [SerializeField] private float _collisionRadius;
@@ -39,6 +43,12 @@ public class TrainCarMover : MonoBehaviour
     
     private void FixedUpdate()
     {
+        _pointTimer += Time.deltaTime;
+        if (_pointTimer > _pointTime)
+        {
+            _scoring.CurrentScore += 1;
+            _pointTimer = 0;
+        }
         var foundCollider = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), _collisionRadius);
         if (!foundCollider) return;
         var trackHealth = foundCollider.GetComponent<TrackHealth>();
