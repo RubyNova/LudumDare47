@@ -9,6 +9,7 @@ namespace Train
         [SerializeField] private float _radius;
         [SerializeField] private string _tagNameForEnemies;
         [SerializeField] private float _moveSpeed;
+        [SerializeField] private Renderer _spriteRenderer;
         
         // Update is called once per frame
         private void FixedUpdate()
@@ -25,6 +26,14 @@ namespace Train
            Gizmos.DrawWireSphere(transform.position, _radius);
         }
 
-        private void Update() => transform.Translate(Vector3.up * _moveSpeed * Time.deltaTime);
+        private void Update()
+        {
+            transform.Translate(Vector3.up * _moveSpeed * Time.deltaTime);
+            
+            if (!_spriteRenderer.isVisible)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }

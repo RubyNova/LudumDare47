@@ -98,3 +98,4 @@ MonoBehaviour:
   _radius: 0.1
   _tagNameForEnemies: Enemy
   _moveSpeed: 5
+  _spriteRenderer: {fileID: 944485273535109806}
