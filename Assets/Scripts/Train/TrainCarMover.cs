@@ -5,18 +5,13 @@ using UnityEngine;
 public class TrainCarMover : MonoBehaviour
 {
     [Header("Dependencies")]
-    [SerializeField]
-    private Transform _circleCentre;
-    [SerializeField]
-    private float _travelRadius = 1f;
-    [SerializeField]
-    private float _movementSpeed = 50f;
-    [SerializeField]
-    private int _enlargementIterations = 10;
-    [SerializeField]
-    private float _enlargementStep = 5f;
+    [SerializeField] private Transform _circleCentre;
+    [SerializeField] private float _travelRadius = 1f;
+    [SerializeField] private float _movementSpeed = 50f;
     [SerializeField] private AudioSource _cartRailsSource;
     [SerializeField] private AudioSource _cartJumpSource;
+    [SerializeField] private float _enlargementMultiplier;
+    [SerializeField] private float _enlargementStep;
 
     private bool _isJumping;
 
@@ -44,18 +39,37 @@ public class TrainCarMover : MonoBehaviour
     {
         _cartRailsSource.Pause();
         var originalScale = transform.localScale;
+        var targetScale = originalScale * _enlargementMultiplier;
 
-        for (int i = 0; i < _enlargementIterations; i++)
+
+        while (transform.localScale.magnitude < targetScale.magnitude)
         {
             transform.localScale += (originalScale * Time.deltaTime * _enlargementStep);
             yield return null;
         }
 
-        for (int i = 0; i < _enlargementIterations; i++)
+        transform.localScale = targetScale;
+
+        while (transform.localScale.x > originalScale.x && transform.localScale.y > originalScale.y && transform.localScale.z > originalScale.z)
         {
             transform.localScale -= (originalScale * Time.deltaTime * _enlargementStep);
             yield return null;
         }
+
+        transform.localScale = originalScale;
+
+        //for (int i = 0; i < _enlargementIterations; i++)
+        //{
+        //    transform.localScale += (originalScale * Time.deltaTime * _enlargementStep);
+        //    yield return null;
+        //}
+
+        //for (int i = 0; i < _enlargementIterations; i++)
+        //{
+        //    transform.localScale -= (originalScale * Time.deltaTime * _enlargementStep);
+        //    yield return null;
+        //}
+
         _cartJumpSource.Play();
         _cartRailsSource.UnPause();
 
