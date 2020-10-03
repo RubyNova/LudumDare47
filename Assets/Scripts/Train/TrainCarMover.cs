@@ -15,6 +15,8 @@ public class TrainCarMover : MonoBehaviour
     private int _enlargementIterations = 10;
     [SerializeField]
     private float _enlargementStep = 5f;
+    [SerializeField] private AudioSource _cartRailsSource;
+    [SerializeField] private AudioSource _cartJumpSource;
 
     private bool _isJumping;
 
@@ -40,6 +42,7 @@ public class TrainCarMover : MonoBehaviour
 
     private IEnumerator HandleJumpAnim()
     {
+        _cartRailsSource.Pause();
         var originalScale = transform.localScale;
 
         for (int i = 0; i < _enlargementIterations; i++)
@@ -53,6 +56,8 @@ public class TrainCarMover : MonoBehaviour
             transform.localScale -= (originalScale * Time.deltaTime * _enlargementStep);
             yield return null;
         }
+        _cartJumpSource.Play();
+        _cartRailsSource.UnPause();
 
         _isJumping = false;
     }
