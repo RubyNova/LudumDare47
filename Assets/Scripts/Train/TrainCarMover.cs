@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Train;
 using UnityEngine;
 
 public class TrainCarMover : MonoBehaviour
@@ -11,10 +12,13 @@ public class TrainCarMover : MonoBehaviour
     private float _travelRadius = 1f;
     [SerializeField]
     private float _movementSpeed = 50f;
+    [Header("Jump Values")]
     [SerializeField]
     private int _enlargementIterations = 10;
     [SerializeField]
     private float _enlargementStep = 5f;
+    [Header("Collision detection")]
+    [SerializeField] private float _collisionRadius = 5f;
 
     private bool _isJumping;
 
@@ -37,6 +41,17 @@ public class TrainCarMover : MonoBehaviour
             StartCoroutine(HandleJumpAnim());
         }
     }
+    
+    private void FixedUpdate()
+    {
+        var foundCollider = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), _collisionRadius);
+
+        if (!foundCollider) return;
+
+        var trackHealth = foundCollider.GetComponent<TrackHealth>();
+        if (!trackHealth) return;
+        if (trackHealth.TrackHealth1 <= 0 && !_isJumping) Debug.Log("You fuckin suck message play");
+    }
 
     private IEnumerator HandleJumpAnim()
     {
@@ -56,4 +71,6 @@ public class TrainCarMover : MonoBehaviour
 
         _isJumping = false;
     }
+    
+    
 }

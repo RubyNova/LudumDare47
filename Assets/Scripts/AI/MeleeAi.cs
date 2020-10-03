@@ -5,6 +5,17 @@ namespace AI
 {
     public class MeleeAi : AiMaster
     {
+        [SerializeField] private float _colRadius;
+        private void FixedUpdate()
+        {
+            if (_trackHealth) return;
+            var foundCollider = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), _colRadius);
+
+            if (!foundCollider) return;
+            var trackHealth = foundCollider.GetComponent<TrackHealth>();
+            if (!trackHealth) return;
+            _trackHealth = trackHealth;
+        }
         protected override void Moving()
         {
             var direction = Vector3.zero - transform.position;
@@ -19,18 +30,12 @@ namespace AI
                 Debug.LogError(gameObject.name + ": Track Health type not found, unable to damage");
                 return;
             }
-            if (_trackHealth.TrackHealth1 < 0) Debug.Log("Track Destroyed");
+
+            if (_trackHealth.TrackHealth1 <= 0) _currentState = AiState.Celebrating;
             _attackTimer += Time.deltaTime;
             if (!(_attackTimer > _attackSpeed)) return;
             _trackHealth.TrackHealth1 -= _attackDamage;
             _attackTimer = 0;
-        }
-
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            var trackHealth = other.GetComponent<TrackHealth>();
-            if (!trackHealth) return;
-            _trackHealth = trackHealth;
         }
     }
 }

@@ -6,6 +6,7 @@ namespace AI
     {
         Spawned,
         Moving,
-        Attacking
+        Attacking,
+        Celebrating
     }
 }

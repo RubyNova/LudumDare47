@@ -28,6 +28,8 @@ namespace AI
                 case AiState.Spawned:
                     if (Math.Abs(Distance) > 0) _currentState = AiState.Moving;
                     break;
+                case AiState.Celebrating:
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
