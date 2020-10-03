@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Scoring;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using Train;
 
 namespace AI
 {
