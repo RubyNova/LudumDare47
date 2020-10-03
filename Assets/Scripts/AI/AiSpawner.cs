@@ -8,9 +8,11 @@ namespace AI
 {
     public class AiSpawner : MonoBehaviour
     {
+        [Header("Spawn Timer")]
         [SerializeField] private float __spawnRate;
         [SerializeField] private float _timerReduction;
         [SerializeField] private float _elapsedTimeToReduce;
+        [Header("Dependencies")]
         [SerializeField] private GameObject[] _aiPrefab;
         [SerializeField] private int[] _spawnWeight;
         [SerializeField] private Transform _centre;
