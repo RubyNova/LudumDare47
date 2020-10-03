@@ -99,6 +99,8 @@ MonoBehaviour:
   _movementSpeed: 0.5
   _attackSpeed: 1
   _attackDamage: 10
+  _health: 0
+  _pointValue: 10
   _colRadius: 0.1
 --- !u!58 &983977016958640839
 CircleCollider2D:
