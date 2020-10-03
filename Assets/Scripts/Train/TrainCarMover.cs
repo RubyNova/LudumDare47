@@ -15,6 +15,7 @@ public class TrainCarMover : MonoBehaviour
     [SerializeField] private float _enlargementStep;
 
     private bool _isJumping;
+    [SerializeField] private float _collisionRadius;
 
     public float TravelRadius => _travelRadius;
 
