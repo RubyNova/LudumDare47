@@ -10,6 +10,7 @@ namespace Train
         [SerializeField] private GameObject _bulletPrefab;
         [SerializeField] private float _bulletCooldown;
         [SerializeField] private AudioSource _shootingSound;
+        [SerializeField] private ParticleSystem _gunshotParticleSystem;
 
         private float _timeToNextBullet = 0f;
     
@@ -33,6 +34,7 @@ namespace Train
                 _shootingSound.Play();
                 Instantiate(_bulletPrefab, _muzzle.position, _muzzle.rotation); //THIS WORKS :tm:
                 _timeToNextBullet = _bulletCooldown;
+                _gunshotParticleSystem.Play();
             }
 
             _timeToNextBullet -= Time.deltaTime;
