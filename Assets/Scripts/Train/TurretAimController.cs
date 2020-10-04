@@ -53,7 +53,7 @@ namespace Train
             {
                 _shootingSound.Play();
                 Instantiate(_bulletPrefab, _muzzle.position, _muzzle.rotation); //THIS WORKS :tm:
-                if (_burstShot) ShootMultiple();
+                if (_burstShot) ShootMultiple(angle);
                 _timeToNextBullet = _bulletCooldown;
                 _gunshotParticleSystem.Play();
             }
@@ -61,17 +61,17 @@ namespace Train
             _timeToNextBullet -= Time.deltaTime;
         }
 
-        private void ShootMultiple()
+        private void ShootMultiple(float baseAngle)
         {
             var angle = 5f;
             var muzzleRot = _muzzle.rotation;
-            var leftRotation = Quaternion.Euler(muzzleRot.x, muzzleRot.y, muzzleRot.z - angle);
-            var leftRot2 = Quaternion.Euler(muzzleRot.x, muzzleRot.y, muzzleRot.z - angle * 2);
-            var rightRotation = Quaternion.Euler(muzzleRot.x, muzzleRot.y, muzzleRot.z + angle);
-            var rightRot2 = Quaternion.Euler(muzzleRot.x, muzzleRot.y, muzzleRot.z + angle * 2);
+            var leftRotation = Quaternion.Euler(0, 0, baseAngle - angle);
+            var leftRot2 = Quaternion.Euler(0, 0, baseAngle - angle * 2);
+            var rightRotation = Quaternion.Euler(0, 0, baseAngle + angle);
+            var rightRot2 = Quaternion.Euler(0, 0, baseAngle + angle * 2);
 
             var position = _muzzle.position;
-            Instantiate(_bulletPrefab, position, leftRotation);
+            var go = Instantiate(_bulletPrefab, position, leftRotation);
             Instantiate(_bulletPrefab, position, rightRotation);
             Instantiate(_bulletPrefab, position, leftRot2);
             Instantiate(_bulletPrefab, position, rightRot2);
