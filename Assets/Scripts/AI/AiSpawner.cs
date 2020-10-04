@@ -20,6 +20,7 @@ namespace AI
         [SerializeField] private float _radius;
         [SerializeField] private TrainCarMover _trainCarMover;
         [SerializeField] private HighScore _scoreboard;
+        [SerializeField] private Animator _animator;
         private float _spawnTimer;
         private float _timeElapsed;
         private float _previousTime = 0f;
