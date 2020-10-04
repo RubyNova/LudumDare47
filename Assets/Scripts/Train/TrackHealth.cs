@@ -12,6 +12,8 @@ namespace Train
         [SerializeField] private HighScore _score;
         private float _startHealth;
 
+        public float StartHealth => _startHealth;
+
         public float TrackHealth1
         {
             get => _trackHealth;

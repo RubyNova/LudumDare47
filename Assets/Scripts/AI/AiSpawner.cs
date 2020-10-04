@@ -27,6 +27,12 @@ namespace AI
 
         public List<GameObject> _aiSpawned = new List<GameObject>();
 
+        public List<GameObject> AiSpawned
+        {
+            get => _aiSpawned;
+            set => _aiSpawned = value;
+        }
+
         private void OnValidate()
         {
             if (_aiPrefab.Length != _spawnWeight.Length) _spawnWeight = new int[_aiPrefab.Length];
@@ -63,6 +69,7 @@ namespace AI
             var goComp = go.GetComponent<AiMaster>();
             goComp.ParentSpawn = this;
             goComp.Distance = _trainCarMover.TravelRadius;
+            _aiSpawned.Add(go);
         }
 
         public void RemoveAi(int num, GameObject go)
