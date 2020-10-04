@@ -21,8 +21,9 @@ namespace AI
         protected override void Moving()
         {
             var direction = Vector3.zero - transform.position;
+            transform.up = -direction;
             transform.position += direction * (Time.deltaTime * _movementSpeed);
-            if (Vector3.Distance(Vector3.zero, transform.position) <= Distance) _currentState = AiState.Attacking;
+            if (Vector3.Distance(Vector3.zero, transform.position) <= Distance + _trackOffset) _currentState = AiState.Attacking;
         }
 
         protected override void Attacking()
@@ -44,7 +45,7 @@ namespace AI
         {
             _health -= num;
             if (_health > 0) return;
-            _parentSpawn.RemoveAi(_pointValue, gameObject);
+            ParentSpawn.RemoveAi(_pointValue, gameObject);
         }
     }
 }

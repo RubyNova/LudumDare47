@@ -20,6 +20,7 @@ namespace AI
         [SerializeField] private float _radius;
         [SerializeField] private TrainCarMover _trainCarMover;
         [SerializeField] private HighScore _scoreboard;
+        [SerializeField] private Animator _animator;
         private float _spawnTimer;
         private float _timeElapsed;
         private float _previousTime = 0f;
@@ -60,7 +61,7 @@ namespace AI
             var spawnPos = _centre.position + (new Vector3(Mathf.Cos(direction), Mathf.Sin(direction), 0f) * _radius);
             var go = Instantiate(aiToSpawn, spawnPos, Quaternion.identity);
             var goComp = go.GetComponent<AiMaster>();
-            goComp._parentSpawn = this;
+            goComp.ParentSpawn = this;
             goComp.Distance = _trainCarMover.TravelRadius;
         }
 
