@@ -335,6 +335,57 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b575a52731ce2d94b984d1396d02710b, type: 3}
+--- !u!1 &353481207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 353481209}
+  - component: {fileID: 353481208}
+  m_Layer: 0
+  m_Name: MenuManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &353481208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353481207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266f76d4438e160419318187a7088a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _menuObjects:
+  - {fileID: 1342651074}
+  - {fileID: 1342651073}
+  - {fileID: 1342651072}
+  - {fileID: 1342651071}
+  - {fileID: 1342651069}
+  - {fileID: 1342651070}
+  _menuObjectState: 000000000101
+--- !u!4 &353481209
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353481207}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 361.9991, y: 217.84113, z: -54.80134}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &440197370 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2785490935177985010, guid: aad1756e4ce403545a42e0d89ba51a71, type: 3}
@@ -1288,6 +1339,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Repair
       objectReference: {fileID: 0}
+    - target: {fileID: 635506114, guid: 0b575b7064ec22c4c9ddb3056df79ddb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 651747604, guid: 0b575b7064ec22c4c9ddb3056df79ddb, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -1716,6 +1771,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Repair
       objectReference: {fileID: 0}
+    - target: {fileID: 2733888942751893545, guid: 0b575b7064ec22c4c9ddb3056df79ddb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3418218861338887128, guid: 0b575b7064ec22c4c9ddb3056df79ddb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2119,6 +2178,31 @@ MonoBehaviour:
 --- !u!1 &1342651069 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 635506114, guid: 0b575b7064ec22c4c9ddb3056df79ddb, type: 3}
+  m_PrefabInstance: {fileID: 1342651042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1342651070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2733888942751893545, guid: 0b575b7064ec22c4c9ddb3056df79ddb, type: 3}
+  m_PrefabInstance: {fileID: 1342651042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1342651071 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3418218861964795923, guid: 0b575b7064ec22c4c9ddb3056df79ddb, type: 3}
+  m_PrefabInstance: {fileID: 1342651042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1342651072 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3418218862611055192, guid: 0b575b7064ec22c4c9ddb3056df79ddb, type: 3}
+  m_PrefabInstance: {fileID: 1342651042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1342651073 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3418218860970324367, guid: 0b575b7064ec22c4c9ddb3056df79ddb, type: 3}
+  m_PrefabInstance: {fileID: 1342651042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1342651074 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3418218861497668343, guid: 0b575b7064ec22c4c9ddb3056df79ddb, type: 3}
   m_PrefabInstance: {fileID: 1342651042}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1529580206 stripped
