@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using AI;
 using Scoring;
 using Train;
@@ -19,8 +20,8 @@ namespace Items
         [SerializeField] private float _radius;
         [Header("For Items")] 
         [SerializeField] private TrackHealth[] _tracks;
-
         [SerializeField] private AiSpawner _aiSpawner;
+        [SerializeField] private TrainCarMover _trainCarMover;
         private float _spawnTimer;
         private float _timeElapsed;
         private float _previousTime;
@@ -53,7 +54,7 @@ namespace Items
             _spawnTimer = 0f;
         }
 
-        public void SpawnItem()
+        private void SpawnItem()
         {
             var spawnChance = Random.Range(0, 100);
             var spawn = false;
@@ -68,6 +69,32 @@ namespace Items
             var go = Instantiate(itemToSpawn, spawnPos, Quaternion.identity);
             var goComp = go.GetComponent<ItemMaster>();
             goComp.ParentSpawn = this;
+        }
+
+        public void ActivateRam(float time)
+        {
+            _trainCarMover.Ram.SetActive(true);
+            StartCoroutine(RamTime(time));
+        }
+
+        private IEnumerator RamTime(float time)
+        {
+            yield return new WaitForSeconds(time);
+            _trainCarMover.Ram.SetActive(false);
+        }
+
+        public void SpeedBoost(float value, float time)
+        {
+            StartCoroutine(SpeedTimer(value, time));
+        }
+
+        private IEnumerator SpeedTimer(float value, float time)
+        {
+            var ogSpeed = _trainCarMover.MovementSpeed;
+            _trainCarMover.MovementSpeed *= value;
+            yield return new WaitForSeconds(time);
+            _trainCarMover.MovementSpeed = ogSpeed;
+            yield return null;
         }
     }
 }
