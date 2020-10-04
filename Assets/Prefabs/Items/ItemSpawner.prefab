@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2525008711777129241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2525008711777129240}
+  - component: {fileID: 2525008711777129223}
+  m_Layer: 0
+  m_Name: ItemSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2525008711777129240
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2525008711777129241}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2525008711777129223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2525008711777129241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423eca9b832314447ad44efb79994b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnRate: 10
+  _timerReduction: 0.1
+  _elapsedTimeToReduce: 20
+  _itemPrefab:
+  - {fileID: 5211634803114931361, guid: d5f1d311fd165f54795003272514c5c1, type: 3}
+  - {fileID: 4761036277201375611, guid: 19500bf67069a224395a76acab7b49b2, type: 3}
+  - {fileID: 8164966443826799419, guid: 9da5dd7a5c15f3d478a79a2339e1c872, type: 3}
+  - {fileID: 2231584172914159267, guid: 290302bd1e759db4bb92f8422fa0eb1e, type: 3}
+  - {fileID: 8355120622773850467, guid: a6ee5c2e2920dd242ab48b618c848bb3, type: 3}
+  _spawnWeight: 64000000500000003c0000002800000014000000
+  _centre: {fileID: 2525008711777129240}
+  _radius: 2
+  _tracks:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _aiSpawner: {fileID: 0}
+  _trainCarMover: {fileID: 0}
+  _turret: {fileID: 0}
