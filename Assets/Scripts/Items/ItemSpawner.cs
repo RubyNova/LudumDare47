@@ -22,6 +22,7 @@ namespace Items
         [SerializeField] private TrackHealth[] _tracks;
         [SerializeField] private AiSpawner _aiSpawner;
         [SerializeField] private TrainCarMover _trainCarMover;
+        [SerializeField] private TurretAimController _turret;
         private float _spawnTimer;
         private float _timeElapsed;
         private float _previousTime;
@@ -70,6 +71,31 @@ namespace Items
             var goComp = go.GetComponent<ItemMaster>();
             goComp.ParentSpawn = this;
         }
+        #region Item Methods
+
+        public void BurstShot(float time)
+        {
+            _turret.BurstShot = true;
+            StartCoroutine(BurstTime(time));
+        }
+
+        public IEnumerator BurstTime(float time)
+        {
+            yield return new WaitForSeconds(time);
+            _turret.BurstShot = false;
+        }
+        public void IncreaseFireRate(float value, float time)
+        {
+            StartCoroutine(FireRateTimer(value, time));
+        }
+
+        private IEnumerator FireRateTimer(float value, float time)
+        {
+            var ogFire = _turret.BulletCooldown;
+            _turret.BulletCooldown /= value;
+            yield return new WaitForSeconds(time);
+            _turret.BulletCooldown = ogFire;
+        }
 
         public void ActivateRam(float time)
         {
@@ -96,5 +122,7 @@ namespace Items
             _trainCarMover.MovementSpeed = ogSpeed;
             yield return null;
         }
+        
+        #endregion
     }
 }

@@ -810,7 +810,7 @@ MonoBehaviour:
   _timerReduction: 0.1
   _elapsedTimeToReduce: 20
   _itemPrefab:
-  - {fileID: 8355120622773850467, guid: a6ee5c2e2920dd242ab48b618c848bb3, type: 3}
+  - {fileID: 4761036277201375611, guid: 19500bf67069a224395a76acab7b49b2, type: 3}
   _spawnWeight: 64000000
   _centre: {fileID: 1229778063}
   _radius: 2
@@ -843,6 +843,7 @@ MonoBehaviour:
   - {fileID: 1395510368}
   _aiSpawner: {fileID: 277320028}
   _trainCarMover: {fileID: 1915986954}
+  _turret: {fileID: 1989942563}
 --- !u!114 &1232642709 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1232642709, guid: 0b575b7064ec22c4c9ddb3056df79ddb, type: 3}
@@ -1353,6 +1354,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b5e7362cf77c8b4d9c43d75ae490f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1989942563 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4636144183092288772, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
+  m_PrefabInstance: {fileID: 1351384394}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e343c2445f797c42b31cbb5b2ee7ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &2046468132 stripped
