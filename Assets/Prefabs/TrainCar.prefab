@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5605793748925263095}
   - component: {fileID: 1804579435277445828}
   - component: {fileID: 8770250879552947012}
+  - component: {fileID: 7737705025935239961}
   m_Layer: 0
   m_Name: TrainCar
   m_TagString: Untagged
@@ -111,6 +112,8 @@ MonoBehaviour:
   _collisionRadius: 0
   _aimController: {fileID: 274750744620860136}
   _cartRotator: {fileID: 274750744424368146}
+  _pointTime: 0
+  _scoring: {fileID: 0}
 --- !u!114 &274750744424368146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,6 +415,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7737705025935239961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274750744424368150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0c943addca55d4593e85187fd3a1fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _repairObject: {fileID: 0}
+  _repairKey: 114
+  _timeSpeed: 0.25
+  _turret: {fileID: 274750744620860136}
 --- !u!1 &274750744451712244
 GameObject:
   m_ObjectHideFlags: 0
