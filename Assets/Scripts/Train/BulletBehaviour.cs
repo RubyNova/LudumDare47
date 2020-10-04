@@ -33,6 +33,7 @@ namespace Train
 
         private void Update()
         {
+            Debug.DrawRay(transform.position, transform.up * 5);
             transform.Translate(Vector3.up * _moveSpeed * Time.deltaTime);
             
             if (!_spriteRenderer.isVisible)
