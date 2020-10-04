@@ -23,12 +23,25 @@ namespace Train
         [SerializeField] private CartRotator _cartRotator;
         [SerializeField] private float _pointTime;
         [SerializeField] private HighScore _scoring;
+        [SerializeField] private GameObject _ram;
         private float _pointTimer;
         private bool _isJumping;
         private bool _hasPlayedCrash;
         public float TravelRadius => _travelRadius;
 
         public event Action TrainCarCrashed;
+
+        public float MovementSpeed
+        {
+            get => _movementSpeed;
+            set => _movementSpeed = value;
+        }
+
+        public GameObject Ram
+        {
+            get => _ram;
+            set => _ram = value;
+        }
 
         private void Start()
         {
