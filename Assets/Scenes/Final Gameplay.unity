@@ -539,6 +539,14 @@ PrefabInstance:
       propertyPath: _score
       value: 
       objectReference: {fileID: 440197370}
+    - target: {fileID: 5450135551875373541, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 5450135551875373541, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.78
+      objectReference: {fileID: 0}
     - target: {fileID: 5450135551912125033, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
       propertyPath: _repairCost
       value: 
@@ -739,6 +747,14 @@ PrefabInstance:
       propertyPath: _score
       value: 
       objectReference: {fileID: 440197370}
+    - target: {fileID: 5450135553169046130, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 5450135553169046130, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.78
+      objectReference: {fileID: 0}
     - target: {fileID: 5450135553211297529, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
       propertyPath: m_Offset.y
       value: 0.8408704
