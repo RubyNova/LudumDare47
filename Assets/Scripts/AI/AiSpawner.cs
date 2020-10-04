@@ -40,8 +40,9 @@ namespace AI
             if (_timeElapsed - _previousTime > _elapsedTimeToReduce)
             {
                 _previousTime = _timeElapsed;
-                __spawnRate -= _timerReduction;
+                if (__spawnRate - _timerReduction > 0) __spawnRate -= _timerReduction;
             }
+
             _spawnTimer = 0f;
         }
 

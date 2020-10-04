@@ -11,6 +11,13 @@ namespace Train
         [SerializeField] private float _bulletCooldown;
         [SerializeField] private AudioSource _shootingSound;
         [SerializeField] private ParticleSystem _gunshotParticleSystem;
+        private bool _canShoot = true;
+
+        public bool CanShoot
+        {
+            get => _canShoot;
+            set => _canShoot = value;
+        }
 
         private float _timeToNextBullet = 0f;
     
@@ -29,7 +36,7 @@ namespace Train
             float angle = (Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg) - 90;
             transform.rotation = Quaternion.Euler(0, 0, angle);
 
-            if (Input.GetKeyDown(KeyCode.Mouse0) && _timeToNextBullet <= 0f)
+            if (Input.GetKeyDown(KeyCode.Mouse0) && _timeToNextBullet <= 0f && _canShoot)
             {
                 _shootingSound.Play();
                 Instantiate(_bulletPrefab, _muzzle.position, _muzzle.rotation); //THIS WORKS :tm:
