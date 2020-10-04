@@ -174,12 +174,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4289524326029252693, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8594437722304289816, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
       propertyPath: m_Name
       value: PrototypeGamePrefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
+--- !u!1 &1359823393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3107826013070274813, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
+  m_PrefabInstance: {fileID: 937731108}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1359823400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359823393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e3eb040c80828f4fae8524f581e816c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trainCar: {fileID: 1823769734}
+  _crosshairs: {fileID: 0}
+  _camera: {fileID: 0}
 --- !u!1 &1688653709
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,6 +270,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1823769734 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4636144182768130045, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
+  m_PrefabInstance: {fileID: 937731108}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2746ded797bdd074b9b908a3fa3861b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3418218861516323270
 PrefabInstance:
   m_ObjectHideFlags: 0

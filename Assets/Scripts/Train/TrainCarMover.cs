@@ -23,7 +23,6 @@ namespace Train
         [SerializeField] private CartRotator _cartRotator;
         [SerializeField] private float _pointTime;
         [SerializeField] private HighScore _scoring;
-        [SerializeField] private float _collisionRadius;
         private float _pointTimer;
         private bool _isJumping;
         private bool _hasPlayedCrash;
@@ -52,13 +51,15 @@ namespace Train
 
         private void FixedUpdate()
         {
-                  _pointTimer += Time.deltaTime;
-        if (_pointTimer > _pointTime)
-        {
-            _scoring.CurrentScore += 1;
-            _pointTimer = 0;
-        }
-            var foundCollider = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), _collisionRadius);
+            _pointTimer += Time.deltaTime;
+            if (_pointTimer > _pointTime)
+            {
+                _scoring.CurrentScore += 1;
+                _pointTimer = 0;
+            }
+
+            var foundCollider = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y),
+                _collisionRadius);
             if (!foundCollider) return;
             var trackHealth = foundCollider.GetComponent<TrackHealth>();
             if (!trackHealth) return;
