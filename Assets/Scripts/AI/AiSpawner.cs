@@ -20,12 +20,17 @@ namespace AI
         [SerializeField] private float _radius;
         [SerializeField] private TrainCarMover _trainCarMover;
         [SerializeField] private HighScore _scoreboard;
-        [SerializeField] private Animator _animator;
         private float _spawnTimer;
         private float _timeElapsed;
         private float _previousTime = 0f;
 
         public List<GameObject> _aiSpawned = new List<GameObject>();
+
+        public List<GameObject> AiSpawned
+        {
+            get => _aiSpawned;
+            set => _aiSpawned = value;
+        }
 
         private void OnValidate()
         {
@@ -63,6 +68,7 @@ namespace AI
             var goComp = go.GetComponent<AiMaster>();
             goComp.ParentSpawn = this;
             goComp.Distance = _trainCarMover.TravelRadius;
+            _aiSpawned.Add(go);
         }
 
         public void RemoveAi(int num, GameObject go)
