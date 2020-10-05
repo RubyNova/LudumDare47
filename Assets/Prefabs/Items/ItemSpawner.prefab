@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnRate: 10
-  _timerReduction: 0.1
+  _timerReduction: 0.2
   _elapsedTimeToReduce: 20
   _itemPrefab:
   - {fileID: 5211634803114931361, guid: d5f1d311fd165f54795003272514c5c1, type: 3}

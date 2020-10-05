@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   __spawnRate: 2.5
   _timerReduction: 0.1
-  _elapsedTimeToReduce: 5
+  _elapsedTimeToReduce: 10
   _aiPrefab:
   - {fileID: 8873068998981296947, guid: 06ac5c6c5e991954b987d2b1d8def00a, type: 3}
   - {fileID: 8873068998981296947, guid: 1765c4e393bf6dd48becdb09954f5711, type: 3}
