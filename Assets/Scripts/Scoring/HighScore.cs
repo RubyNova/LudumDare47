@@ -1,14 +1,13 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
+using TMPro;
 
 namespace Scoring
 {
     public class HighScore : MonoBehaviour
     {
         [SerializeField] private int _currentScore;
-        [SerializeField] private Text _scoreText;
-        [SerializeField] private Text _highscoreText;
+        [SerializeField] private TMP_Text _scoreText;
+        [SerializeField] private TMP_Text _highscoreText;
 
         public int CurrentScore
         {

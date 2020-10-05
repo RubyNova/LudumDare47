@@ -1,14 +1,13 @@
-﻿using System;
-using Scoring;
+﻿using Scoring;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 namespace Train
 {
     public class TrackHealth : MonoBehaviour
     {
         [SerializeField] private float _trackHealth;
-        [SerializeField] private Text _repairCost;
+        [SerializeField] private TMP_Text _repairCost;
         [SerializeField] private HighScore _score;
         private float _startHealth;
 
