@@ -48,7 +48,7 @@ MonoBehaviour:
   _tagNameForEnemies: Enemy
   _moveSpeed: 20
   _spriteRenderer: {fileID: 3229059426969622115}
-  _damage: 0
+  _damage: 10
 --- !u!1 &3945246184543471095
 GameObject:
   m_ObjectHideFlags: 0
