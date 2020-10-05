@@ -1,4 +1,5 @@
 ﻿using Interface;
+using UnityEngine;
 
 namespace Items
 {
@@ -12,6 +13,7 @@ namespace Items
                 ParentSpawn.AiSpawner.AiSpawned.Remove(go);
                 Destroy(go);
             }
+            AudioSource.PlayClipAtPoint(_itemActivationSound, transform.position);
             Destroy(gameObject);
         }
     }

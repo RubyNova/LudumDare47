@@ -10,6 +10,7 @@ namespace Items
         public void Interact(int num)
         {
             ParentSpawn.IncreaseFireRate(_fireRateMultiplier, _duration);
+            AudioSource.PlayClipAtPoint(_itemActivationSound, transform.position);
             Destroy(gameObject);
         }
     }

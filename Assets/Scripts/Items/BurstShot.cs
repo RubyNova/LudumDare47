@@ -9,6 +9,7 @@ namespace Items
         public void Interact(int num)
         {
             ParentSpawn.BurstShot(_duration);
+            AudioSource.PlayClipAtPoint(_itemActivationSound, transform.position);
             Destroy(gameObject);
         }
     }

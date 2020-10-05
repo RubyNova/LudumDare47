@@ -12,6 +12,8 @@ namespace Items
             {
                 ParentSpawn.Tracks[i].TrackHealth1 = ParentSpawn.Tracks[i].StartHealth;
             }
+
+            AudioSource.PlayClipAtPoint(_itemActivationSound, transform.position);
             
             Destroy(gameObject);
         }
