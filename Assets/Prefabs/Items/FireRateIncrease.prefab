@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28764d70d0c5d9b40a9e19f58cae369a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _itemActivationSound: {fileID: 8300000, guid: 253481eb927496b47b20124a93f7ec67, type: 3}
   _fireRateMultiplier: 2
   _duration: 20
 --- !u!58 &6676929790843402269

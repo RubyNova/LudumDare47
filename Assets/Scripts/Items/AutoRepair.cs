@@ -13,7 +13,7 @@ namespace Items
                 ParentSpawn.Tracks[i].TrackHealth1 = ParentSpawn.Tracks[i].StartHealth;
             }
 
-            AudioSource.PlayClipAtPoint(_itemActivationSound, transform.position);
+            AudioSource.PlayClipAtPoint(_itemActivationSound, Camera.main.transform.position, 0.5f);
             
             Destroy(gameObject);
         }

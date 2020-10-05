@@ -112,4 +112,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bca18c22ca084d4cbd84f8b72be88fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _itemActivationSound: {fileID: 8300000, guid: bc34654e3e41feb479c5134bc6667f21, type: 3}
   _ramDuration: 20

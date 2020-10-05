@@ -112,5 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c372ce4104e6d4d96ec068835a26bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _itemActivationSound: {fileID: 8300000, guid: dcfb599c4b1f3c0489d2926d4f6b66e7, type: 3}
   _speedMultiplier: 2
   _duration: 20

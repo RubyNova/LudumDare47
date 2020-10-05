@@ -586,9 +586,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 473441031823426094, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 473441031823426094, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
+      propertyPath: m_Volume
+      value: 0.642
+      objectReference: {fileID: 0}
     - target: {fileID: 541717845695053214, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
       propertyPath: m_SortingOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1261789984166951191, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2947361259375097077, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
       propertyPath: _repairObject
@@ -598,6 +610,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3273560350851581242, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 09477ba2e11833b43adf280ec3db1302, type: 3}
     - target: {fileID: 4636144182719847194, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
       propertyPath: m_SortingOrder
       value: 6
@@ -1473,7 +1489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3418218860981431072, guid: 0b575b7064ec22c4c9ddb3056df79ddb, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3418218861338887128, guid: 0b575b7064ec22c4c9ddb3056df79ddb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1823,10 +1839,6 @@ PrefabInstance:
     - target: {fileID: 2525008711777129223, guid: d5284ddcd1978c74c868d3cc7ae6371d, type: 3}
       propertyPath: _radius
       value: 4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2525008711777129223, guid: d5284ddcd1978c74c868d3cc7ae6371d, type: 3}
-      propertyPath: _spawnRate
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2525008711777129240, guid: d5284ddcd1978c74c868d3cc7ae6371d, type: 3}
       propertyPath: m_LocalPosition.x
