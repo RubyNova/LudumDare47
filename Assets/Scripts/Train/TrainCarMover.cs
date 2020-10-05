@@ -33,6 +33,8 @@ namespace Train
         private float _pointTimer;
         private bool _isJumping;
         private bool _hasPlayedCrash;
+        private float _jumpCoolDown = 0.5f;
+        private float _jumpCoolTimer;
         public float TravelRadius => _travelRadius;
 
         public event Action TrainCarCrashed;
@@ -49,7 +51,7 @@ namespace Train
             set => _ram = value;
         }
 
-        private void Start()
+        private void Awake()
         {
             _isJumping = false;
             _hasPlayedCrash = false;
@@ -61,7 +63,9 @@ namespace Train
             float angle = ((Time.time * _movementSpeed) % 360.0f) * Mathf.Deg2Rad;
             transform.position = _circleCentre.position + (new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0f) * _travelRadius);
 
-            if (Input.GetKeyDown(KeyCode.Space) && !_isJumping)
+            if (_jumpCoolTimer < _jumpCoolDown) _jumpCoolTimer += Time.deltaTime;
+
+            if (Input.GetKeyDown(KeyCode.Space) && !_isJumping && _jumpCoolTimer > _jumpCoolDown)
             {
                 _isJumping = true;
                 StartCoroutine(HandleJumpAnim());
@@ -103,8 +107,7 @@ namespace Train
             _cartRailsSource.Pause();
             var originalScale = transform.localScale;
             var targetScale = originalScale * _enlargementMultiplier;
-
-
+            
             while (transform.localScale.magnitude < targetScale.magnitude)
             {
                 transform.localScale += (originalScale * Time.deltaTime * _enlargementStep);
@@ -125,8 +128,7 @@ namespace Train
             _cartRailsSource.UnPause();
 
             _isJumping = false;
+            _jumpCoolTimer = 0f;
         }
-
-
     }
 }
