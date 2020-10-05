@@ -318,7 +318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7752487269411003260, guid: b575a52731ce2d94b984d1396d02710b, type: 3}
       propertyPath: __spawnRate
-      value: 2.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7752487269411003260, guid: b575a52731ce2d94b984d1396d02710b, type: 3}
       propertyPath: _timerReduction
@@ -575,13 +575,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 541717845695053214, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2947361259375097077, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
       propertyPath: _repairObject
       value: 
       objectReference: {fileID: 1342651069}
+    - target: {fileID: 3107826013070274810, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636144182719847194, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4636144182768130042, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636144182768130044, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4636144182768130045, guid: bdc3c8cfe78546049a7df5654808ef62, type: 3}
       propertyPath: _scoring
