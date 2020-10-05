@@ -310,7 +310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7752487269411003260, guid: b575a52731ce2d94b984d1396d02710b, type: 3}
       propertyPath: __spawnRate
-      value: 0.1
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7752487269411003260, guid: b575a52731ce2d94b984d1396d02710b, type: 3}
       propertyPath: _timerReduction
