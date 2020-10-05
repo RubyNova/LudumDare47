@@ -28,6 +28,18 @@ namespace Items
         private float _previousTime;
         private bool _gameOver;
 
+        private float _fireRateTime;
+        private float _fireTimeElapsed;
+        private float _ramTime;
+        private float _ramTimeElapsed;
+        private float _burstTime;
+        private float _burstTimeElapsed;
+
+        private bool _fireTimeRunning;
+        private bool _ramTimeRunning;
+        private bool _burstTimeRunning;
+        
+
         public TrackHealth[] Tracks
         {
             get => _tracks;
@@ -84,36 +96,76 @@ namespace Items
         public void BurstShot(float time)
         {
             _turret.BurstShot = true;
-            StartCoroutine(BurstTime(time));
+            if (!_burstTimeRunning) StartCoroutine(BurstTime(time));
+            else _burstTime += time;
+            Debug.Log("Burst Time: " + _burstTime);
         }
 
-        public IEnumerator BurstTime(float time)
+        private IEnumerator BurstTime(float time)
         {
-            yield return new WaitForSeconds(time);
+            _burstTimeElapsed = 0f;
+            _burstTime = time;
+            _burstTimeRunning = true;
+
+            while (_burstTimeElapsed < _burstTime)
+            {
+                _burstTimeElapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            _burstTime = 0f;
+            _burstTimeRunning = false;
             _turret.BurstShot = false;
         }
+
         public void IncreaseFireRate(float value, float time)
         {
-            StartCoroutine(FireRateTimer(value, time));
+            if (!_fireTimeRunning) StartCoroutine(FireRateTimer(value, time));
+            else _fireRateTime += time;
+            Debug.Log("Fire Rate Time: " + _fireRateTime);
         }
 
         private IEnumerator FireRateTimer(float value, float time)
         {
+            _fireTimeElapsed = 0f;
+            _fireRateTime = time;
+            _fireTimeRunning = true;
             var ogFire = _turret.BulletCooldown;
             _turret.BulletCooldown /= value;
-            yield return new WaitForSeconds(time);
+
+            while (_fireTimeElapsed < _fireRateTime)
+            {
+                _fireTimeElapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            _fireRateTime = 0f;
+            _fireTimeRunning = false;
             _turret.BulletCooldown = ogFire;
         }
 
         public void ActivateRam(float time)
         {
             _trainCarMover.Ram.SetActive(true);
-            StartCoroutine(RamTime(time));
+            if (!_ramTimeRunning) StartCoroutine(RamTime(time));
+            else _ramTime += time;
+            Debug.Log("Ram Time: " + _ramTime);
         }
 
         private IEnumerator RamTime(float time)
         {
-            yield return new WaitForSeconds(time);
+            _ramTimeElapsed = 0f;
+            _ramTime = time;
+            _ramTimeRunning = true;
+
+            while (_ramTimeElapsed < _ramTime)
+            {
+                _ramTimeElapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            _ramTime = 0f;
+            _ramTimeRunning = false;
             _trainCarMover.Ram.SetActive(false);
         }
 

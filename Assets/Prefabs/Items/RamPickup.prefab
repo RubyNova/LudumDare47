@@ -112,4 +112,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bca18c22ca084d4cbd84f8b72be88fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ramDuration: 5
+  _ramDuration: 20
