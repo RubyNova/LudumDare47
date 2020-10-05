@@ -9,7 +9,7 @@ namespace Items
 {
     public class ItemSpawner : MonoBehaviour
     {
-                [Header("Spawn Timer")]
+        [Header("Spawn Timer")]
         [SerializeField] private float _spawnRate;
         [SerializeField] private float _timerReduction;
         [SerializeField] private float _elapsedTimeToReduce;
@@ -26,11 +26,18 @@ namespace Items
         private float _spawnTimer;
         private float _timeElapsed;
         private float _previousTime;
+        private bool _gameOver;
 
         public TrackHealth[] Tracks
         {
             get => _tracks;
             set => _tracks = value;
+        }
+
+        public bool GameOver
+        {
+            get => _gameOver;
+            set => _gameOver = value;
         }
 
         public AiSpawner AiSpawner => _aiSpawner;
@@ -42,6 +49,7 @@ namespace Items
 
         private void Update()
         {
+            if (_gameOver) return;
             _spawnTimer += Time.deltaTime;
             if (!(_spawnTimer > _spawnRate)) return;
             SpawnItem();

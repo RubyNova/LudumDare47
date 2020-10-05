@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 983977016958640839}
   - component: {fileID: 8206658286329977865}
   m_Layer: 0
-  m_Name: DummyEnemy
+  m_Name: Flank Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 25444ece396e74b488ca72a5263aadd5, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.4198113, g: 0.81901723, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -97,14 +97,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa89e8b71be885644a36b7e958cce1a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 0.5
+  _movementSpeed: 0.3
   _attackSpeed: 1
   _attackDamage: 10
-  _health: 0
-  _pointValue: 10
+  _health: 10
+  _pointValue: 20
   _animator: {fileID: 8206658286329977865}
   _trackOffset: 0.75
   _colRadius: 1
+  _circleSpeed: 1
+  _circleSize: 10
 --- !u!58 &983977016958640839
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -24,6 +24,7 @@ namespace AI
         private float _spawnTimer;
         private float _timeElapsed;
         private float _previousTime = 0f;
+        private bool _gameOver;
 
         public List<GameObject> _aiSpawned = new List<GameObject>();
 
@@ -33,6 +34,12 @@ namespace AI
             set => _aiSpawned = value;
         }
 
+        public bool GameOver
+        {
+            get => _gameOver;
+            set => _gameOver = value;
+        }
+
         private void OnValidate()
         {
             if (_aiPrefab.Length != _spawnWeight.Length) _spawnWeight = new int[_aiPrefab.Length];
@@ -40,6 +47,7 @@ namespace AI
 
         private void Update()
         {
+            if (_gameOver) return;
             _spawnTimer += Time.deltaTime;
             if (!(_spawnTimer > __spawnRate)) return;
             SpawnAi();

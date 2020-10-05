@@ -1,4 +1,5 @@
-﻿using Interface;
+﻿using System;
+using Interface;
 using Train;
 using UnityEngine;
 
@@ -7,8 +8,9 @@ namespace AI
     public class MeleeAi : AiMaster, IInteract
     {
         [SerializeField] private float _colRadius;
-        
-        
+        [SerializeField] private float _circleSpeed;
+        [SerializeField] private float _circleSize;
+
         private void FixedUpdate()
         {
             if (_trackHealth) return;
@@ -21,6 +23,15 @@ namespace AI
         protected override void Moving()
         {
             var direction = Vector3.zero - transform.position;
+
+            var xPos = Mathf.Sin(Time.time * _circleSpeed) * _circleSize;
+            var yPos = Mathf.Cos(Time.time * _circleSpeed) * _circleSize;
+
+            direction.x += xPos;
+            direction.y += yPos;
+            
+            Debug.DrawRay(transform.position, direction);
+            
             transform.up = -direction;
             transform.position += direction * (Time.deltaTime * _movementSpeed);
             if (Vector3.Distance(Vector3.zero, transform.position) <= Distance + _trackOffset) _currentState = AiState.Attacking;

@@ -43,9 +43,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc264254fae462a4880900f076b9cb1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  __spawnRate: 2.5
+  _timerReduction: 0.1
+  _elapsedTimeToReduce: 5
   _aiPrefab:
   - {fileID: 8873068998981296947, guid: 06ac5c6c5e991954b987d2b1d8def00a, type: 3}
-  _spawnWeight: 4b000000
+  - {fileID: 8873068998981296947, guid: 1765c4e393bf6dd48becdb09954f5711, type: 3}
+  - {fileID: 8873068998981296947, guid: 5b39b262ca28bd44287e8d74dfbb61f9, type: 3}
+  - {fileID: 8873068998981296947, guid: 8ce7c4ecd73965c4086349d9ec005bcf, type: 3}
+  - {fileID: 8873068998981296947, guid: 372b530cc3b5250448fba481a675edc6, type: 3}
+  _spawnWeight: 64000000320000001e0000000f00000005000000
   _centre: {fileID: 7752487269411003259}
   _radius: 10
   _trainCarMover: {fileID: 0}
+  _scoreboard: {fileID: 0}
+  _animator: {fileID: 0}
+  _aiSpawned: []

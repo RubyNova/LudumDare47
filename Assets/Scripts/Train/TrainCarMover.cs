@@ -4,6 +4,8 @@ using Scoring;
 using Train;
 using UnityEngine;
 using System;
+using AI;
+using Items;
 
 namespace Train
 {
@@ -24,6 +26,10 @@ namespace Train
         [SerializeField] private float _pointTime;
         [SerializeField] private HighScore _scoring;
         [SerializeField] private GameObject _ram;
+
+        [Header("For Game Over")] 
+        [SerializeField] private AiSpawner _aiSpawner;
+        [SerializeField] private ItemSpawner _itemSpawner;
         private float _pointTimer;
         private bool _isJumping;
         private bool _hasPlayedCrash;
@@ -87,6 +93,8 @@ namespace Train
                 _cartRotator.enabled = false;
                 this.enabled = false;
                 TrainCarCrashed?.Invoke();
+                _aiSpawner.GameOver = true;
+                _itemSpawner.GameOver = true;
             }
         }
 
