@@ -9,6 +9,7 @@ namespace Train
         [SerializeField] private float _trackHealth;
         [SerializeField] private TMP_Text _repairCost;
         [SerializeField] private HighScore _score;
+        [SerializeField] private ParticleSystem _fireParticles;
         private float _startHealth;
 
         public float StartHealth => _startHealth;
@@ -16,7 +17,19 @@ namespace Train
         public float TrackHealth1
         {
             get => _trackHealth;
-            set => _trackHealth = value;
+            set
+            {
+                _trackHealth = value;
+                
+                if (_trackHealth <= 0)
+                {
+                    _fireParticles.Play();   
+                }
+                else
+                {
+                    _fireParticles.Stop();
+                }
+            }
         }
 
         private void Awake()
@@ -35,13 +48,13 @@ namespace Train
             if (_score.CurrentScore >= amount)
             {
                 _trackHealth += amount;
-                _score.CurrentScore -= (int) amount;
+                _score.CurrentScore -= (int)amount;
             }
             else
             {
                 amount = _score.CurrentScore;
                 _trackHealth += amount;
-                _score.CurrentScore -= (int) amount;
+                _score.CurrentScore -= (int)amount;
             }
         }
     }
